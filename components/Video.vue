@@ -4,7 +4,7 @@
     <iframe
       v-if="currentVideo.url.includes('youtube.com/') || currentVideo.url.includes('youtu.be/')"
       width="100%"
-      height="620"
+      height="100%"
       allow="autoplay; encrypted-media"
       allowfullscreen
       :src='"https://youtube.com/embed/" + youtubeParser(currentVideo.url) + "?autoplay=1"'
@@ -69,8 +69,8 @@
         v-else-if="currentVideo.selftext_html"
         v-html="htmlDecode(currentVideo.selftext_html)"
       />
-      <div v-else>
-        I can't play this format, here is the direct <a :href="currentVideo.url" target="_blank">link</a>
+      <div v-else class="invalid">
+        I can't play this format, try the direct <a :href="currentVideo.url" target="_blank">link</a>
       </div>
     </div>
 
@@ -102,6 +102,8 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+@import '../css/variables.css';
+
 .Video {
   border-radius: 4px 4px 0 0;
   background-color: white;
@@ -113,16 +115,42 @@ export default {
   min-height: 400px;
   max-height: 80%;
   overflow: auto;
+  padding-top: 56.25%;
+  position: relative;
+  box-shadow: 0px 0px 13px -7px black;
+
+  & div,
+  & iframe,
+  & img,
+  & video {
+    position: absolute;
+    top: 0; left: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    max-height:100%;
+    border-radius: 4px 4px 0 0;
+    border: 0;
+  }
 
   & .text {
-    padding: 20px;
+    padding: 30px;
     text-align: left;
   }
 
-  & iframe {
-    width: 100%;
-    border-radius: 4px 4px 0 0;
-    border: 0;
+  & .invalid {
+    padding: 30px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & a {
+      display: block;
+      padding-left: 10px;
+      font-weight: bold;
+      color: var(--action);
+    }
   }
 }
 </style>

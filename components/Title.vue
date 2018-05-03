@@ -24,7 +24,6 @@ export default {
   align-items: center;
   background-color: var(--base);
   position: relative;
-  top: -3px;
   color: var(--text);
   border-radius: 0 0 2px 2px;
   box-shadow: rgb(119, 119, 119) 0px 1px 4px;
