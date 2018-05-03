@@ -9,10 +9,17 @@
     <select @change="navigate">
     <!-- <select @change="navigate(`/?r=${subReddit}`)"> -->
       <option
+        v-if="!subReddits.map(sub => sub.toLowerCase().split(' ').join('')).includes(subreddit.toLowerCase())"
+        value="subreddit"
+        :selected="subreddit"
+      >
+        {{subreddit}}
+      </option>
+      <option
         v-for="subReddit in subReddits"
-        :value="subReddit.toLowerCase()"
+        :value="subReddit.toLowerCase().split(' ').join('')"
         :key="subReddit"
-        selected="subReddit === subreddit"
+        :selected="subReddit.toLowerCase().split(' ').join('') === subreddit"
       >
         {{ subReddit }}
       </option>
@@ -66,6 +73,7 @@ export default {
     background-color: var(--base);
     color: var(--primary);
     font-weight: bold;
+    text-transform: capitalize;
 
     &:hover,
     &:focus {
