@@ -12,9 +12,21 @@
     </iframe>
 
     <iframe
+      v-else-if="currentVideo.url.includes('vimeo.com/')"
+      width="100%"
+      height="100%"
+      frameborder="0"
+      allowfullscreen
+      autoplay
+      :title="currentVideo.title"
+      :src="`https://player.vimeo.com/video/${currentVideo.url.split('/').pop()}`"
+    >
+    </iframe>
+
+    <iframe
       v-else-if="currentVideo.url.includes('liveleak.com/')"
       width="100%"
-      height="620"
+      height="100%"
       :src="`https://www.liveleak.com/ll_embed?i=${qs(currentVideo.url.split('?')[1])}`"
       frameborder="0"
       allowfullscreen>
@@ -131,6 +143,7 @@ export default {
     max-height:100%;
     border-radius: 4px 4px 0 0;
     border: 0;
+    object-fit: contain;
   }
 
   & .text {
