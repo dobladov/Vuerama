@@ -23,6 +23,7 @@ const subReddits = [
   "Idiots Fighting Things",
   "Lectures",
   "Listen To This",
+  "Livestream Fail",
   "Meal Time Videos",
   "Motivation Videos",
   "Obscure Media",
