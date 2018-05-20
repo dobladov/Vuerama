@@ -11,8 +11,12 @@
           <span>{{video.data.thumbnail}}</span>
         </div>
         <img
-          v-else-if="(video.data.thumbnail && (video.data.thumbnail !== 'self' && video.data.thumbnail !== 'default')) || video.data.media"
-          :src="video.data.thumbnail || (video.data.media && video.data.media.oembed && video.data.media.oembed.thumbnail_url)"
+          v-else-if="(video.data.thumbnail
+          && (video.data.thumbnail !== 'self'
+            && video.data.thumbnail !== 'default'
+            &&  video.data.thumbnail !== 'image')
+          )| video.data.media"
+          :src="(video.data.media && video.data.media.oembed && video.data.media.oembed.thumbnail_url) || video.data.thumbnail"
           :alt="video.data.title"
           @click.prevent="setVideo(i)"
         />
