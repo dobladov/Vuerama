@@ -1,8 +1,15 @@
 <template>
   <section class="Video">
 
+    <div
+    class="text self"
+      v-if="currentVideo.is_self && currentVideo.is_video === false"
+    >
+      {{currentVideo.title}}
+    </div>
+
     <iframe
-      v-if="currentVideo.url.includes('youtube.com/') || currentVideo.url.includes('youtu.be/')"
+      v-else-if="currentVideo.url.includes('youtube.com/') || currentVideo.url.includes('youtu.be/')"
       width="100%"
       height="100%"
       allow="autoplay; encrypted-media"
@@ -140,6 +147,10 @@ export default {
   & .text {
     padding: 30px;
     text-align: left;
+
+    &.self {
+      font-size: 3rem;
+    }
   }
 
   & .invalid {
