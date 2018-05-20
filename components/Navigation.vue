@@ -74,6 +74,7 @@ export default {
     color: var(--primary);
     font-weight: bold;
     text-transform: capitalize;
+    cursor: pointer;
 
     &:hover,
     &:focus {
