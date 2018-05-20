@@ -33,12 +33,6 @@
     </iframe>
 
     <div
-      v-else-if="currentVideo.url.endsWith(('.jpg'|| '.jpeg'))"
-    >
-      <img :src="currentVideo.url" :alt="currentVideo.url">
-    </div>
-
-    <div
       v-else-if="currentVideo.url.includes('imgur.com/') && currentVideo.url.includes('.gifv' || '.gif')"
     >
 
@@ -47,29 +41,26 @@
       </video>
 
       <img v-else :src="currentVideo.url" :alt="currentVideo.title">
-
     </div>
 
     <div
-      v-else-if="currentVideo.url.includes('media1.giphy.com/')"
+      v-else-if="
+      currentVideo.url.endsWith('.jpg')
+      || currentVideo.url.endsWith('.jpeg')
+      || currentVideo.url.endsWith('.png')
+      || currentVideo.url.endsWith('.gif')
+      || currentVideo.url.includes('media1.giphy.com/')"
     >
-      <img :src="currentVideo.url" :alt="currentVideo.title">
-    </div>
-
-    <div
-      v-else-if="currentVideo.url.endsWith('.gif')"
-    >
-      <img :src="currentVideo.url" :alt="currentVideo.title">
+      <img :src="currentVideo.url" :alt="currentVideo.url">
     </div>
 
     <div
       v-else-if="currentVideo.url.includes('gfycat.com/')"
     >
-
-    <video :poster="`https://thumbs.gfycat.com/${currentVideo.url.split('/').pop()}-poster.jpg`" loop autoplay controls>
-      <source id="webmSource" :src="`https://giant.gfycat.com/${currentVideo.url.split('/').pop()}.webm`" type="video/webm">
-      <source id="mp4Source" :src="`https://giant.gfycat.com/${currentVideo.url.split('/').pop()}.mp4`" type="video/mp4">
-    </video>
+      <video :poster="`https://thumbs.gfycat.com/${currentVideo.url.split('/').pop()}-poster.jpg`" loop autoplay controls>
+        <source id="webmSource" :src="`https://giant.gfycat.com/${currentVideo.url.split('/').pop()}.webm`" type="video/webm">
+        <source id="mp4Source" :src="`https://giant.gfycat.com/${currentVideo.url.split('/').pop()}.mp4`" type="video/mp4">
+      </video>
     </div>
 
     <div v-else>
