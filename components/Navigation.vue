@@ -3,11 +3,11 @@
     <button
       v-if="index > 0"
       @click="nextVideo(false)"
+      title="Previous Video"
     >
       &lt;
     </button>
-    <select @change="navigate">
-    <!-- <select @change="navigate(`/?r=${subReddit}`)"> -->
+    <select @change="navigate" title="Select Subreddit">
       <option
         v-if="!subReddits.map(sub => sub.toLowerCase().split(' ').join('')).includes(subreddit.toLowerCase())"
         value="subreddit"
@@ -25,13 +25,10 @@
       </option>
     </select>
 
-    <!-- <button @click="navigate(`/?r=youtubehaiku`)">
-      go
-    </button> -->
-
     <button
       v-if="index < total"
       @click="nextVideo(true)"
+      title="Next Video"
     >
       &gt;
     </button>
@@ -62,15 +59,15 @@ export default {
 .Navigation {
   display: flex;
   justify-content: space-between;
-  box-shadow: 0px 1px 4px #777;
   position: relative;
   width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 8px 2px;
 
   & button,
   & select {
     padding: 15px;
     border: none;
-    background-color: var(--base);
+    background-color: var(--prominentDark);
     color: var(--primary);
     font-weight: bold;
     text-transform: capitalize;
@@ -81,16 +78,16 @@ export default {
 
     &:hover,
     &:focus {
-      background-color: var(--secondary);
+      background-color: var(--prominent);
     }
   }
 
   & button:first-child {
-    border-right: 2px solid var(--secondary);
+    border-right: 2px solid #ba394c;
   }
 
   & button:last-child {
-    border-left: 2px solid var(--secondary);
+    border-left: 2px solid #ba394c;
   }
 
   & select {

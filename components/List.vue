@@ -57,10 +57,18 @@ export default {
 @import '../css/variables.css';
 
 .List {
-  background-color: var(--base);
-  box-shadow: 0px 1px 4px #777;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 8px 2px;
   flex: 1;
   overflow: auto;
+
+  & a {
+    color: var(--text);
+
+    &:hover,
+    &:focus {
+      color: var(--prominent);
+    }
+  }
 
   & ul {
     margin: 0;
@@ -73,10 +81,21 @@ export default {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      border-bottom: 1px solid var(--secondary);
+      border-bottom: 1px solid var(--buttonDark);
+      transition: background-color .5s;
+      background-color: var(--baseDakr);
+
+      &:nth-child(even) {
+        background-color: #302c56;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: #413a7a;
+      }
 
       &.selected {
-        box-shadow: inset 0px 0px 13px -7px black;
+          box-shadow: inset 0px 0px 13px -7px black;
         position: relative;
 
         &:after {
@@ -86,7 +105,7 @@ export default {
           left: 0;
           width: 5px;
           height: 100%;
-          background-color: var(--action);
+          background-color: var(--prominent);
         }
       }
 
@@ -99,15 +118,15 @@ export default {
         cursor: pointer;
 
         & span {
-          color: tomato;
+          color: var(--prominent);
           font-size: 2rem;
-          border: 2px solid tomato;
+          border: 2px solid var(--prominent);
           padding: 5px 10px;
           border-radius: 10px;
         }
 
         &:hover span {
-          background-color: tomato;
+          background-color: var(--prominent);
           color: var(--base);
         }
       }
@@ -134,6 +153,7 @@ export default {
 
       &.loadMore {
         padding: 0;
+        background-color: var(--prominentDark);
 
         & a {
           padding: 20px;
@@ -143,7 +163,8 @@ export default {
 
           &:hover,
           &:focus {
-            background-color: var(--secondary);
+            background-color: var(--prominent);
+            color: var(--text);
           }
         }
       }
