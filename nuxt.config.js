@@ -23,7 +23,6 @@ module.exports = {
 
   manifest: {
     name: 'SnooVideo',
-    start_url: '.',
     dir: 'ltr',
     display: 'standalone',
     short_name: 'SnooVideo',
