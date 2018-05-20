@@ -75,6 +75,9 @@ export default {
     font-weight: bold;
     text-transform: capitalize;
     cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-align-last:center;
 
     &:hover,
     &:focus {
