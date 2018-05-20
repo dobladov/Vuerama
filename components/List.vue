@@ -3,8 +3,15 @@
     <ul>
 
       <li v-for="(video, i) in videos" :key="video.data.id" :class="{ 'selected': i === index }">
+        <div
+          class="nsfw"
+          v-if="video.data.thumbnail === 'nsfw'"
+          @click.prevent="setVideo(i)"
+        >
+          <span>nsfw</span>
+        </div>
         <img
-          v-if="(video.data.thumbnail && video.data.thumbnail !== 'self' ) || video.data.media"
+          v-else-if="(video.data.thumbnail && (video.data.thumbnail !== 'self' && video.data.thumbnail !== 'default')) || video.data.media"
           :src="video.data.thumbnail || (video.data.media && video.data.media.oembed && video.data.media.oembed.thumbnail_url)"
           :alt="video.data.title"
           @click.prevent="setVideo(i)"
@@ -79,10 +86,26 @@ export default {
         }
       }
 
-      & img {
+      & img,
+      & .nsfw {
         width: 150px;
         min-width: 150px;
         max-width: 100%;
+        text-align: center;
+        cursor: pointer;
+
+        & span {
+          color: tomato;
+          font-size: 2rem;
+          border: 2px solid tomato;
+          padding: 5px 10px;
+          border-radius: 10px;
+        }
+
+        &:hover span {
+          background-color: tomato;
+          color: var(--base);
+        }
       }
 
       & .info {
