@@ -1,15 +1,8 @@
 <template>
   <section class="Video">
 
-    <div
-    class="text self"
-      v-if="currentVideo.is_self && currentVideo.is_video === false"
-    >
-      {{currentVideo.title}}
-    </div>
-
     <iframe
-      v-else-if="currentVideo.url.includes('youtube.com/') || currentVideo.url.includes('youtu.be/')"
+      v-if="currentVideo.url.includes('youtube.com/') || currentVideo.url.includes('youtu.be/')"
       width="100%"
       height="100%"
       allow="autoplay; encrypted-media"
@@ -79,6 +72,14 @@
         v-else-if="currentVideo.selftext_html"
         v-html="htmlDecode(currentVideo.selftext_html)"
       />
+
+      <div
+        class="text self"
+        v-else-if="currentVideo.is_self && currentVideo.is_video === false"
+      >
+        {{currentVideo.title}}
+      </div>
+
       <div v-else class="invalid">
         I can't play this format, try the direct <a :href="currentVideo.url" target="_blank">link</a>
       </div>
