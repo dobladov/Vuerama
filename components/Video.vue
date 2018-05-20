@@ -149,6 +149,10 @@ export default {
     text-align: left;
 
     &.self {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
       font-size: 3rem;
     }
   }
