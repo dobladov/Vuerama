@@ -4,11 +4,11 @@
 
       <li v-for="(video, i) in videos" :key="video.data.id" :class="{ 'selected': i === index }">
         <div
-          class="nsfw"
-          v-if="video.data.thumbnail === 'nsfw'"
+          class="notShown"
+          v-if="video.data.thumbnail === 'nsfw' || video.data.thumbnail === 'spoiler'"
           @click.prevent="setVideo(i)"
         >
-          <span>nsfw</span>
+          <span>{{video.data.thumbnail}}</span>
         </div>
         <img
           v-else-if="(video.data.thumbnail && (video.data.thumbnail !== 'self' && video.data.thumbnail !== 'default')) || video.data.media"
@@ -87,7 +87,7 @@ export default {
       }
 
       & img,
-      & .nsfw {
+      & .notShown {
         width: 150px;
         min-width: 150px;
         max-width: 100%;
