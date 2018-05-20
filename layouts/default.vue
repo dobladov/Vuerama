@@ -5,12 +5,15 @@
 </template>
 
 <style lang="postcss">
+@import '../css/variables.css';
+
 html {
   font-size: 16px;
-  background-image: url('~/assets/round.png'), linear-gradient(to bottom,#eef2f3,#8e9eab);
   font-size:16px;
   font-family:futura-pt,sans-serif,sans-serif;
-  color:#3c3c3c;
+  color: var(--text);
+  background-color: var(--base);
+  background-image: url('~/assets/round.png'), linear-gradient(to bottom,#eef2f3,#8e9eab);
 }
 
 *, *:before, *:after {
@@ -20,11 +23,11 @@ html {
 
 a {
   text-decoration: none;
-  color: var(--primary);
+  color: var(--baseDakr);
 
   &:hover,
   &:focus {
-    color: #fe8698;
+    color: var(--prominent);
   }
 }
 
@@ -36,19 +39,4 @@ pre {
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
-.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  background-color: var(--primary);
-  padding: 10px;
-  border-radius: 50%;
-  color: var(--secondary);
-
-  &:hover {
-    background-color: var(--action);
-  }
-}
 </style>

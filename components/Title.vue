@@ -1,7 +1,7 @@
 <template>
     <div class="Title">
-    <a target="_blank" :href='baseUrl + link'>{{title}}</a>
-    <a target="_blank" :href='url' class="externalLink">
+    <a target="_blank" :href='baseUrl + link' title="Open on Reddit">{{title}}</a>
+    <a target="_blank" :href='url' class="externalLink" title="Original Link">
       <img src="~/assets/link.svg" alt="Link">
     </a>
     </div>
@@ -22,28 +22,34 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--base);
+  background-color: var(--baseDakr);
   position: relative;
   color: var(--text);
-  border-radius: 0 0 2px 2px;
+  border-radius: 0 0 5px 5px;
   box-shadow: rgb(119, 119, 119) 0px 1px 4px;
 
   & a {
     font-size: 1.5rem;
+    color: var(--text);
+
+    &:hover,
+    &:focus {
+      color: var(--prominent);
+    }
   }
 
   & .externalLink {
     & img {
       width: 50px;
       height: 50px;
-      background-color: var(--primary);
+      background-color: var(--buttonDark);
       padding: 10px;
       border-radius: 50%;
     }
 
     &:hover img,
     &:focus img {
-      background-color: var(--action);
+      background-color: var(--button);
     }
   }
 }

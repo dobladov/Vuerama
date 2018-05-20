@@ -1,8 +1,10 @@
 :root {
-  --base: #fff;
-  --action: #fc8597;
-  --primary: #414141;
-  --secondary: #e7e7e7;
-  --text: #455569;
-  --shadow: rgb(119, 119, 119) 0px 1px 4px;
+  --text: #fff;
+  --base: #4844a3;
+  --baseDakr: #29264c;
+  --prominent: #ff556e;
+  --prominentDark: #aa2f41;
+  --button: #5752cd;
+  --buttonDark: #342d71;
+  --link: rgba(255, 255, 255, 0.5);
 }

@@ -116,8 +116,8 @@ export default {
 @import '../css/variables.css';
 
 .Video {
-  border-radius: 4px 4px 0 0;
-  background-color: white;
+  border-radius: 5px 5px 0 0;
+  background-color: var(--text);
   width: 100%;
   text-align: center;
   display: flex;
@@ -129,6 +129,7 @@ export default {
   padding-top: 56.25%;
   position: relative;
   box-shadow: 0px 0px 13px -7px black;
+  color: var(--baseDakr);
 
   & div,
   & iframe,
@@ -140,7 +141,7 @@ export default {
     width: 100%;
     height: 100%;
     max-height:100%;
-    border-radius: 4px 4px 0 0;
+    border-radius: 5px 5px 0 0;
     border: 0;
     object-fit: contain;
   }
@@ -169,7 +170,7 @@ export default {
       display: block;
       padding-left: 10px;
       font-weight: bold;
-      color: var(--action);
+      color: var(--prominent);
     }
   }
 }
