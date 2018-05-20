@@ -1,7 +1,16 @@
-# vuerama
+# Vuerama
+Subreddit video player
 
-> Nuxt.js project
+Currently running without SSR at [Snoo.video](http://snoo.video/)
 
+```
+git clone https://github.com/dobladov/videorama.git
+cd videorama
+npm install
+npm run dev
+```
+
+![Screenshot](https://i.imgur.com/qOC5qbF.png)
 ## Build Setup
 
 ``` bash
@@ -18,5 +27,3 @@ $ npm start
 # generate static project
 $ npm run generate
 ```
-
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
