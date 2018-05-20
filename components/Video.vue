@@ -40,22 +40,22 @@
     </iframe>
 
     <div
-      v-else-if="currentVideo.url.includes('imgur.com/') && currentVideo.url.includes('.gifv' || '.gif')"
+      v-else-if="currentVideo.url.includes('imgur.com/')"
     >
 
       <video v-if="currentVideo.url.endsWith('.gifv')" loop autoplay >
         <source type="video/mp4" :src="currentVideo.url.replace('gifv', 'mp4')">
       </video>
 
-      <img v-else :src="currentVideo.url" :alt="currentVideo.title">
+      <img v-else :src="`http://i.imgur.com/${currentVideo.url.split('/').pop()}.jpg`" :alt="currentVideo.title">
     </div>
 
     <div
       v-else-if="
-      currentVideo.url.endsWith('.jpg')
-      || currentVideo.url.endsWith('.jpeg')
-      || currentVideo.url.endsWith('.png')
-      || currentVideo.url.endsWith('.gif')
+      currentVideo.url.includes('.jpg')
+      || currentVideo.url.includes('.jpeg')
+      || currentVideo.url.includes('.png')
+      || currentVideo.url.includes('.gif')
       || currentVideo.url.includes('media1.giphy.com/')"
     >
       <img :src="currentVideo.url" :alt="currentVideo.url">
