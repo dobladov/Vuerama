@@ -1,6 +1,12 @@
 <template>
     <div class="Title">
-    <a target="_blank" :href='baseUrl + link' title="Open on Reddit">{{title}}</a>
+    <div class="mainTitle" >
+      <a target="_blank" :href='baseUrl + link' title="Open on Reddit">{{flair ? title.replace(`[${flair}]`, '') : title}}</a>
+      <span
+        v-if="flair"
+        class="flair"
+      >{{flair}}</span>
+    </div>
     <a target="_blank" :href='url' class="externalLink" title="Original Link">
       <img src="~/assets/link.svg" alt="Link">
     </a>
@@ -9,7 +15,7 @@
 
 <script>
 export default {
-  props: ['title', 'link', 'url', 'baseUrl']
+  props: ['title', 'link', 'url', 'baseUrl', 'flair']
 }
 </script>
 
@@ -28,15 +34,30 @@ export default {
   border-radius: 0 0 5px 5px;
   box-shadow: rgb(119, 119, 119) 0px 1px 4px;
 
-  & a {
-    font-size: 1.5rem;
-    color: var(--text);
+  & .mainTitle {
+    display: flex;
+    align-itmes: center;
+    flex-wrap: wrap;
 
-    &:hover,
-    &:focus {
+    & a {
+      font-size: 1.5rem;
+      color: var(--text);
+      margin-right: 10px;
+
+      &:hover,
+      &:focus {
+        color: var(--prominent);
+      }
+    }
+
+    & .flair {
       color: var(--prominent);
+      border: 2px solid var(--prominent);
+      padding: 5px 10px;
+      border-radius: 10px;
     }
   }
+
 
   & .externalLink {
     & img {
@@ -50,6 +71,12 @@ export default {
     &:hover img,
     &:focus img {
       background-color: var(--button);
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    & .flair {
+      margin-top: 10px;
     }
   }
 }

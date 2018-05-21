@@ -8,6 +8,7 @@
           :link='currentVideo.permalink'
           :url='currentVideo.url'
           :baseUrl='baseUrl'
+          :flair='currentVideo.link_flair_text'
         />
       </main>
 
