@@ -39,4 +39,17 @@ pre {
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
+iframe {
+  padding: 0;
+  margin: 0;
+  overflow:hidden;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+}
+
 </style>
