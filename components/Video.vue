@@ -67,6 +67,16 @@
       <div v-if="currentVideo.secure_media
         && currentVideo.secure_media.oembed
         && currentVideo.secure_media.oembed.html" v-html="htmlDecode(currentVideo.secure_media.oembed.html)" />
+
+      <video controls autoplay loop
+        v-else-if="currentVideo.secure_media
+        && currentVideo.secure_media.reddit_video
+        && currentVideo.secure_media.reddit_video.scrubber_media_url"
+        :src="currentVideo.secure_media.reddit_video.scrubber_media_url"
+      >
+        <source :src="currentVideo.secure_media.reddit_video.dash_url">
+        <source :src="currentVideo.secure_media.reddit_video.fallback_url">
+      </video>
       <div
         class="text"
         v-else-if="currentVideo.selftext_html"
