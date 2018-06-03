@@ -60,6 +60,7 @@ export default {
   box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 8px 2px;
   flex: 1;
   overflow: auto;
+  background-color: var(--text);
 
   & a {
     color: var(--text);

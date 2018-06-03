@@ -1,5 +1,5 @@
 <template>
-  <section class="Video">
+  <section class="Video" v-if="Object.keys(currentVideo).length > 0">
 
     <iframe
       v-if="currentVideo.url.includes('youtube.com/') || currentVideo.url.includes('youtu.be/')"
@@ -96,6 +96,7 @@
     </div>
 
   </section>
+  <section v-else class="Video" />
 </template>
 
 <script>

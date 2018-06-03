@@ -2,13 +2,13 @@
   <section class="wrapper">
 
       <main>
-        <Video :currentVideo='currentVideo' />
+        <Video
+          :currentVideo='currentVideo'
+          :err='err'
+        />
         <Title
-          :title='currentVideo.title'
-          :link='currentVideo.permalink'
-          :url='currentVideo.url'
+          :currentVideo='currentVideo'
           :baseUrl='baseUrl'
-          :flair='currentVideo.link_flair_text'
         />
       </main>
 
@@ -17,12 +17,12 @@
           :index='index'
           :subreddit='subreddit'
           :baseUrl='baseUrl'
-          :total='data.children.length -1'
+          :total='Object.keys(data).length > 0 ? data.children.length -1 : 0'
           :nextVideo='nextVideo'
         />
         <List
-          :videos='data.children'
-          :nextPage='data.after'
+          :videos='data && data.children'
+          :nextPage='data && data.after'
           :baseUrl='baseUrl'
           :subreddit='subreddit'
           :index='index'
@@ -47,18 +47,25 @@ export default {
 
   async asyncData ({route}) {
     const subreddit = (route.query && route.query.r) || 'videos'
-    const { data } = await axios.get(`${baseUrl}/r/${subreddit}/.json`)
+    let data = {}
+    let currentVideo = {}
 
-    const currentVideo = data.data.children[0].data
+    try {
+      const response = await axios.get(`${baseUrl}/r/${subreddit}/.json`)
+      data = response.data.data
+      currentVideo = data.children[0].data
+    } catch(e) {
+      console.log(e)
+    }
 
     console.log("call async data")
 
     return {
       baseUrl,
       subreddit,
-      data: data.data,
+      data,
       currentVideo,
-      index: 0
+      index: 0,
     }
   },
 

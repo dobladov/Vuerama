@@ -1,13 +1,20 @@
 <template>
     <div class="Title">
     <div class="mainTitle" >
-      <a target="_blank" :href='baseUrl + link' title="Open on Reddit">{{flair ? title.replace(`[${flair}]`, '') : title}}</a>
+      <a
+        v-if="currentVideo.title"
+        target="_blank"
+        :href='baseUrl + link' title="Open on Reddit">{{currentVideo.flair ? currentVideo.title.replace(`[${currentVideo.flair}]`, '') : currentVideo.title}}
+      </a>
+      <span v-else>
+        There must be a network problem &#9889;
+      </span>
       <span
-        v-if="flair"
+        v-if="currentVideo.flair"
         class="flair"
-      >{{flair}}</span>
+      >{{currentVideo.flair}}</span>
     </div>
-    <a target="_blank" :href='url' class="externalLink" title="Original Link">
+    <a v-if="currentVideo.url" target="_blank" :href='currentVideo.url' class="externalLink" title="Original Link">
       <img src="~/assets/link.svg" alt="Link">
     </a>
     </div>
@@ -15,7 +22,7 @@
 
 <script>
 export default {
-  props: ['title', 'link', 'url', 'baseUrl', 'flair']
+  props: ['currentVideo', 'baseUrl']
 }
 </script>
 
@@ -39,7 +46,8 @@ export default {
     align-itmes: center;
     flex-wrap: wrap;
 
-    & a {
+    & a,
+    & span:first-child {
       font-size: 1.5rem;
       color: var(--text);
       margin-right: 10px;
