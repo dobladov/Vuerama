@@ -4,7 +4,7 @@
       <a
         v-if="currentVideo.title"
         target="_blank"
-        :href='baseUrl + link' title="Open on Reddit">{{currentVideo.flair ? currentVideo.title.replace(`[${currentVideo.flair}]`, '') : currentVideo.title}}
+        :href="`${baseUrl}${currentVideo.permalink}`" title="Open on Reddit">{{currentVideo.flair ? currentVideo.title.replace(`[${currentVideo.flair}]`, '') : currentVideo.title}}
       </a>
       <span v-else>
         There must be a network problem &#9889;
