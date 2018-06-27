@@ -50,7 +50,7 @@
 export default {
   props: ['videos', 'nextPage', 'baseUrl', 'subreddit', 'index', 'loadMore', 'setVideo'],
   watch: {
-    videos() {
+    subreddit() {
       this.$refs.list.scrollIntoView({
         block: "start"
       })
