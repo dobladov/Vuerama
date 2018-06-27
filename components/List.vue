@@ -1,6 +1,6 @@
 <template>
   <section class="List">
-    <ul>
+    <ul ref="list">
 
       <li v-for="(video, i) in videos" :key="video.data.id" :class="{ 'selected': i === index }">
         <div
@@ -48,7 +48,14 @@
 
 <script>
 export default {
-  props: ['videos', 'nextPage', 'baseUrl', 'subreddit', 'index', 'loadMore', 'setVideo']
+  props: ['videos', 'nextPage', 'baseUrl', 'subreddit', 'index', 'loadMore', 'setVideo'],
+  watch: {
+    videos() {
+      this.$refs.list.scrollIntoView({
+        block: "start"
+      })
+    }
+  }
 }
 </script>
 
