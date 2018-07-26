@@ -36,6 +36,7 @@ const subReddits = [
   "The Way We Were On Video",
   "Trailers",
   "Unexpected Thug Life",
+  "Useful Vids",
   "Video Porn",
   "Videos",
   "Vids",
