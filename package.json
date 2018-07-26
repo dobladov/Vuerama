@@ -21,16 +21,16 @@
   "dependencies": {
     "@nuxtjs/pwa": "^2.0.8",
     "axios": "^0.18.0",
-    "nuxt": "^1.4.0",
-    "query-string": "^6.0.0"
+    "nuxt": "^1.4.1",
+    "query-string": "^6.1.0"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.3",
-    "eslint": "^4.19.1",
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.2.0",
     "eslint-friendly-formatter": "^4.0.1",
-    "eslint-loader": "^2.0.0",
-    "eslint-plugin-vue": "^4.5.0",
-    "postcss": "^6.0.22",
+    "eslint-loader": "^2.1.0",
+    "eslint-plugin-vue": "^4.7.1",
+    "postcss": "^7.0.1",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^11.1.0"
   }
