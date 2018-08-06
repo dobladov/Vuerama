@@ -10,6 +10,7 @@
           :currentVideo='currentVideo'
           :baseUrl='baseUrl'
         />
+        <Social />
       </main>
 
       <aside>
@@ -39,6 +40,7 @@ import axios from 'axios'
 
 import Video from '~/components/Video.vue'
 import Title from '~/components/Title.vue'
+import Social from '~/components/Social.vue'
 import Navigation from '~/components/Navigation.vue'
 import List from '~/components/List.vue'
 const baseUrl = 'https://www.reddit.com'
@@ -72,6 +74,7 @@ export default {
   components: {
     Video,
     Title,
+    Social,
     Navigation,
     List
   },
