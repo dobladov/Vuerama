@@ -3,10 +3,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'SnooVideo',
+    title: 'SnooVideo - Subreddit Video Player',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'keywords', content: 'Reddit,video,player,Subreddit,Subreddits' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/icon.png' }
@@ -29,7 +30,7 @@ module.exports = {
     lang: 'en',
     author: '@dobladov',
     theme_color: '#fff',
-    description: "Subreddit video player",
+    description: "Subreddit video player - Watch videos from Reddit with an easy to use interface that allows you to navigate the best subreddits",
   },
   /*
   ** Build configuration\
