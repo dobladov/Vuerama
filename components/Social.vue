@@ -4,7 +4,7 @@
         <img class="coffee" src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg" alt="Buy Me A Coffee" >
       </a>
       <a href="https://github.com/dobladov/vuerama" target="_blank">
-        <img class="github" src="https://img.shields.io/badge/GitHub-Dobladov-4844a3.svg?longCache=true&style=for-the-badge" alt="Buy Me A Coffee" >
+        <img class="github" src="https://img.shields.io/badge/GitHub-29264c.svg?longCache=true&style=for-the-badge" alt="GitHub" >
       </a>
     </div>
 
