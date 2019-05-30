@@ -33,6 +33,7 @@ const subReddits = [
   "RoadCam",
   "Street Fights",
   "Sweet Justice",
+  "Ted",
   "The Way We Were On Video",
   "Trailers",
   "Unexpected Thug Life",
