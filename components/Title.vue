@@ -15,7 +15,7 @@
       >{{currentVideo.flair}}</span>
     </div>
     <a v-if="currentVideo.url" target="_blank" :href='currentVideo.url' class="externalLink" title="Original Link">
-      <img src="~/assets/link.svg" alt="Link">
+      <img src="~assets/link.svg" alt="Link">
     </a>
     </div>
 </template>

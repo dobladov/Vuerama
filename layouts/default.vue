@@ -13,7 +13,7 @@ html {
   font-family:futura-pt,sans-serif,sans-serif;
   color: var(--text);
   background-color: var(--base);
-  background-image: url('~/assets/round.png'), linear-gradient(to bottom,#eef2f3,#8e9eab);
+  background-image: url('~assets/round.png'), linear-gradient(to bottom,#eef2f3,#8e9eab);
 }
 
 *, *:before, *:after {
