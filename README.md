@@ -1,8 +1,6 @@
 # Vuerama
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ef8bc161-ff33-47e1-91c4-b835aece980a/deploy-status)](https://app.netlify.com/sites/snoo/deploys)
-<img src="https://img.shields.io/badge/Support%20this%20project-PayPal-aa2f41.svg" alt="GitHub" >
-
-## Subreddit video player
+[![PayPal](https://img.shields.io/badge/Support%20this%20project-PayPal-009CDE.svg)](https://www.paypal.me/dobladov)
 
 Currently running at [snoo.netlify.com](http://snoo.netlify.com/)
 
