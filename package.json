@@ -19,10 +19,10 @@
     }
   },
   "dependencies": {
-    "@nuxtjs/pwa": "^2.0.8",
+    "@nuxtjs/pwa": "^2.6.0",
     "axios": "^0.18.0",
     "nuxt": "^1.4.1",
-    "query-string": "^6.1.0"
+    "query-string": "^6.5.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
