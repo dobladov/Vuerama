@@ -39,12 +39,18 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
-
-    postcss: [
-      require('postcss-import')(),
-      require('postcss-cssnext')()
-    ],
-
+    postcss: {
+      plugins: {
+        'postcss-import': {},
+        'postcss-preset-env': {
+          features: {
+            'nesting-rules': true,
+            'custom-media-queries': true,
+            'color-mod-function': true
+          }
+        },
+      }
+    },
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
