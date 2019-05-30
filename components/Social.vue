@@ -1,10 +1,10 @@
 <template>
     <div class="Social">
-      <a href="https://www.buymeacoffee.com/dobladov" target="_blank">
-        <img class="coffee" src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg" alt="Buy Me A Coffee" >
+      <a href="https://paypal.me/dobladov" target="_blank">
+        <img src="https://img.shields.io/badge/Support%20me-PayPal-aa2f41.svg" alt="GitHub" >
       </a>
       <a href="https://github.com/dobladov/vuerama" target="_blank">
-        <img class="github" src="https://img.shields.io/badge/GitHub-29264c.svg?longCache=true&style=for-the-badge" alt="GitHub" >
+        <img src="https://img.shields.io/badge/Source%20code-GitHub-aa2f41.svg" alt="GitHub" >
       </a>
     </div>
 
@@ -15,12 +15,5 @@
 
 .Social {
   padding: 10px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  & .coffee {
-    height: 28px;
-  }
 }
 </style>
