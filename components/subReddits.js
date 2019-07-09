@@ -43,6 +43,7 @@ const subReddits = [
   "Vids",
   "Vines",
   "Virtual Freakout",
+  "Watch And Learn",
   "WoahTube",
   "Youtube Haiku"
 ]
