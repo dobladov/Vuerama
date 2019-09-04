@@ -30,7 +30,7 @@ const subReddits = [
   "Play It Again Sam",
   "Premature Celebration",
   "Public Freakout",
-  "Restoration Videos"
+  "Restoration Videos",
   "RoadCam",
   "Street Fights",
   "Sweet Justice",
