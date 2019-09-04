@@ -7,7 +7,7 @@
       height="100%"
       allow="autoplay; encrypted-media"
       allowfullscreen
-      :src='"https://youtube.com/embed/" + youtubeParser(currentVideo.url) + "?autoplay=1"'
+      :src='"https://youtube.com/embed/" + youtubeParser(decodeURIComponent(currentVideo.url)) + "?autoplay=1"'
     >
     </iframe>
 
@@ -113,6 +113,8 @@ export default {
     youtubeParser(url) {
       const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/
       const match = url.match(regExp);
+      console.log(url)
+      console.log("Match", match)
       return (match && match[7].length==11)? match[7] : false;
     },
     htmlDecode(entites) {
