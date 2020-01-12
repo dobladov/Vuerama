@@ -39,6 +39,7 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
+    publicPath: process.env.PUBLIC_PATH,
     postcss: {
       plugins: {
         'postcss-import': {},
