@@ -1,8 +1,8 @@
 name: Deploy to GitHub Pages
 
-on: 
+on:
   push:
-    branches: 
+    branches:
       - master
 
 jobs:
@@ -12,14 +12,16 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
-    
+
     - name: Build
       uses: actions/setup-node@v1
       with:
-        node-version: '12.x' 
+        node-version: '13.x'
     - run: |
         npm install
         npm run build
+      env:
+        PUBLIC_PATH: /Vuerama
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
